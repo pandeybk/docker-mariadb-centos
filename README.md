@@ -37,9 +37,26 @@ You will see an output like the following:
 		========================================================================
 
 
-In this case, `Datuy0ej` is the password assigned to the `admin` user.
+In this case, `Datuy0ej` is the password assigned to the `admin` user. For host IP you can use following command to check
+
+		docker inspect <CONTAINER_ID> | grep IPAddress
+
 
 Please do not forget to change the above password as soon as possible! 
 
-Note:By default MariaDB user 'root' has no password but only allows local connections.
+**Note 1:**
+By default MariaDB user 'root' has no password but only allows local connections.
+
+**Note 2:**
+If you don't know how to identify running `<CONTAINER_ID>` you can use following command.
+		
+		docker ps
+
+Output something looks like this.
+
+		CONTAINER ID        IMAGE                                   COMMAND                CREATED             STATUS              PORTS                    NAMES
+		ed58eb4b44a2        bkpandey/docker-mariadb-centos:latest   /mysql_install_db.sh   7 minutes ago       Up 7 minutes        0.0.0.0:3306->3306/tcp   condescending_brattain
+
+Where `ed58eb4b44a2` is the `<CONTAINER_ID>`
+
 
